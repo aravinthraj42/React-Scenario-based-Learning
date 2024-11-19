@@ -31,3 +31,70 @@ const ParentComponent = () => {
 
 const ChildComponent = ({ data }) => <div>{data}</div>;
 ```
+**3. How to Call Parent Component Method from Child Component in React**
+Pass the parent method as a prop to the child component:
+
+```
+const ParentComponent = () => {
+  const parentMethod = () => alert("Called from Child");
+
+  return <ChildComponent callParentMethod={parentMethod} />;
+};
+
+const ChildComponent = ({ callParentMethod }) => (
+  <button onClick={callParentMethod}>Call Parent Method</button>
+```
+
+**4. How to Access the DOM Element**
+You can use useRef in functional components:
+```
+export default function App() {
+
+  return (
+    <div>
+      <MyComponent />
+    </div>
+  );
+}
+
+
+const MyComponent = () => {
+  const myRef = useRef(null);
+
+  const focusInput = () => {
+    myRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={myRef} type="text" />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+};
+```
+
+**5. How to Bind Array/Array of Objects to Dropdown in React**
+```
+export default function App() {
+
+  return (
+    <div>
+      <MyComponent />
+    </div>
+  );
+}
+const MyComponent = () => {
+  const options = ["Option 1", "Option 2", "Option 3"];
+  
+  return (
+    <select>
+      {options.map(option => (
+        <option key={option} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  );
+};
+```
