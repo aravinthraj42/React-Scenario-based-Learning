@@ -1,6 +1,6 @@
 # React-Scenario-based-Learning
 
-1. How to Display Dynamic HTML Data in React?
+**1. How to Display Dynamic HTML Data in React?**************
    
 To display dynamic HTML data, you can use the dangerouslySetInnerHTML attribute:
 ```
@@ -11,7 +11,7 @@ const MyComponent = ({ htmlContent }) => (
 Use this cautiously as it can expose your app to XSS attacks.
 
 
-2. How to Send Data from Parent Component to Child Component in React ?
+**2. How to Send Data from Parent Component to Child Component in React ?**
 
 You can pass data from a parent to a child component using props:
 ```
